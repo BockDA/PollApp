@@ -1,0 +1,253 @@
+<mxfile host="65bd71144e">
+    <diagram id="pollapp-flow" name="Programmablauf">
+        <mxGraphModel dx="2795" dy="911" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1700" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="bgHome" parent="1" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#FFF4E5;strokeColor=#E59A2F;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;connectable=0;" value="Seite 1: Homescreen (Route „/“)" vertex="1">
+                    <mxGeometry height="595" width="1180" x="-120" y="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="bgDetail" parent="1" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#E6F7F5;strokeColor=#4AA79A;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;connectable=0;" value="Seite 2: Detailansicht (Route „/survey/:id“)&lt;br&gt;&lt;span style=&quot;font-weight:normal&quot;&gt;Zustände per @if: abstimmbar / nur lesen / 0 Stimmen&lt;/span&gt;" vertex="1">
+                    <mxGeometry height="790" width="530" x="-15" y="700" as="geometry"/>
+                </mxCell>
+                <mxCell id="bgModal" parent="1" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#F0E8F8;strokeColor=#8E6BB8;dashed=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;connectable=0;" value="Modal „Create new survey“&lt;br&gt;&lt;span style=&quot;font-weight:normal&quot;&gt;Overlay über Seite 1, keine Route&lt;/span&gt;" vertex="1">
+                    <mxGeometry height="940" width="605" x="530" y="700" as="geometry"/>
+                </mxCell>
+                <mxCell id="bgConfirm" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8E6BB8;dashed=1;verticalAlign=top;align=right;spacingRight=6;fontSize=10;connectable=0;" value="eigenes Overlay" vertex="1">
+                    <mxGeometry height="95" width="230" x="605" y="1440" as="geometry"/>
+                </mxCell>
+                <mxCell id="bgReadOnly" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#4AA79A;dashed=1;verticalAlign=top;align=left;spacingLeft=4;fontSize=10;connectable=0;" value="Zustand" vertex="1">
+                    <mxGeometry height="93" width="230" x="5" y="912" as="geometry"/>
+                </mxCell>
+                <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="App öffnen" vertex="1">
+                    <mxGeometry height="50" width="160" x="300" y="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="load" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Umfragen aus Supabase laden" vertex="1">
+                    <mxGeometry height="60" width="200" x="280" y="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="dLoad" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Laden erfolgreich?" vertex="1">
+                    <mxGeometry height="100" width="180" x="290" y="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="errLoad" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Fehlermeldung anzeigen" vertex="1">
+                    <mxGeometry height="60" width="180" x="560" y="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="home" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Homescreen anzeigen&lt;br&gt;(bald endende Umfragen + Liste)" vertex="1">
+                    <mxGeometry height="70" width="240" x="260" y="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="dAction" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Was macht der Benutzer?" vertex="1">
+                    <mxGeometry height="110" width="200" x="280" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="filterClick" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Reiter (Active / Past) oder Kategorie (inkl. „Alle“) wählen" vertex="1">
+                    <mxGeometry height="60" width="200" x="20" y="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="filterList" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Liste nach Reiter + Kategorie filtern" vertex="1">
+                    <mxGeometry height="60" width="200" x="20" y="560" as="geometry"/>
+                </mxCell>
+                <mxCell id="surveyClick" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Umfrage anklicken" vertex="1">
+                    <mxGeometry height="60" width="200" x="280" y="610" as="geometry"/>
+                </mxCell>
+                <mxCell id="detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Detailansicht öffnen (eigene Route)" vertex="1">
+                    <mxGeometry height="60" width="200" x="280" y="710" as="geometry"/>
+                </mxCell>
+                <mxCell id="results" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Ergebnisse laden + Live-Verbindung (Realtime) starten" vertex="1">
+                    <mxGeometry height="60" width="200" x="280" y="810" as="geometry"/>
+                </mxCell>
+                <mxCell id="dExpired" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Umfrage abgelaufen?" vertex="1">
+                    <mxGeometry height="100" width="180" x="290" y="910" as="geometry"/>
+                </mxCell>
+                <mxCell id="readOnly" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Abstimmung deaktiviert,&lt;br&gt;nur Ergebnisse sichtbar" vertex="1">
+                    <mxGeometry height="60" width="200" x="20" y="930" as="geometry"/>
+                </mxCell>
+                <mxCell id="vote" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Antwort auswählen und abstimmen" vertex="1">
+                    <mxGeometry height="60" width="200" x="280" y="1060" as="geometry"/>
+                </mxCell>
+                <mxCell id="saveVote" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Stimme in Supabase speichern" vertex="1">
+                    <mxGeometry height="60" width="200" x="280" y="1160" as="geometry"/>
+                </mxCell>
+                <mxCell id="dVoteOk" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Von Datenbank akzeptiert?" vertex="1">
+                    <mxGeometry height="100" width="180" x="290" y="1260" as="geometry"/>
+                </mxCell>
+                <mxCell id="errVote" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Fehlermeldung&lt;br&gt;(z.B. abgelaufen, schon abgestimmt)" vertex="1">
+                    <mxGeometry height="60" width="200" x="20" y="1280" as="geometry"/>
+                </mxCell>
+                <mxCell id="updateResults" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Ergebnisse aktualisieren" vertex="1">
+                    <mxGeometry height="60" width="200" x="280" y="1410" as="geometry"/>
+                </mxCell>
+                <mxCell id="otherVote" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;" value="Stimme aus anderem Browser&lt;br&gt;(Realtime-Ereignis)" vertex="1">
+                    <mxGeometry height="60" width="200" x="20" y="1410" as="geometry"/>
+                </mxCell>
+                <mxCell id="newClick" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="„New Survey“ klicken" vertex="1">
+                    <mxGeometry height="60" width="200" x="620" y="610" as="geometry"/>
+                </mxCell>
+                <mxCell id="modal" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Modal öffnen&lt;br&gt;(Overlay, keine Route)" vertex="1">
+                    <mxGeometry height="60" width="200" x="620" y="710" as="geometry"/>
+                </mxCell>
+                <mxCell id="fillForm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Formular ausfüllen" vertex="1">
+                    <mxGeometry height="60" width="200" x="620" y="810" as="geometry"/>
+                </mxCell>
+                <mxCell id="dCancel" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Abbrechen?" vertex="1">
+                    <mxGeometry height="100" width="180" x="630" y="910" as="geometry"/>
+                </mxCell>
+                <mxCell id="closeModal" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Modal schließen" vertex="1">
+                    <mxGeometry height="60" width="180" x="900" y="930" as="geometry"/>
+                </mxCell>
+                <mxCell id="dValid" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Pflichtfelder gültig?" vertex="1">
+                    <mxGeometry height="100" width="180" x="630" y="1060" as="geometry"/>
+                </mxCell>
+                <mxCell id="errValid" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Validierungsfehler anzeigen" vertex="1">
+                    <mxGeometry height="60" width="180" x="900" y="1080" as="geometry"/>
+                </mxCell>
+                <mxCell id="saveSurvey" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Umfrage speichern&lt;br&gt;(Button währenddessen gesperrt)" vertex="1">
+                    <mxGeometry height="60" width="200" x="620" y="1210" as="geometry"/>
+                </mxCell>
+                <mxCell id="dSaveOk" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Speichern erfolgreich?" vertex="1">
+                    <mxGeometry height="100" width="180" x="630" y="1310" as="geometry"/>
+                </mxCell>
+                <mxCell id="errSave" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Fehlermeldung,&lt;br&gt;Formular bleibt offen" vertex="1">
+                    <mxGeometry height="60" width="180" x="900" y="1330" as="geometry"/>
+                </mxCell>
+                <mxCell id="confirm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Bestätigungs-Overlay anzeigen" vertex="1">
+                    <mxGeometry height="60" width="200" x="620" y="1460" as="geometry"/>
+                </mxCell>
+                <mxCell id="toNewDetail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Overlay schließen →&lt;br&gt;Detailansicht der neuen Umfrage" vertex="1">
+                    <mxGeometry height="60" width="200" x="620" y="1560" as="geometry"/>
+                </mxCell>
+                <mxCell id="noteOpen" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;size=15;" value="&lt;b&gt;Noch offen (vor Umsetzung klären):&lt;/b&gt;&lt;br&gt;• Was heißt „bald endend“ zeitlich?&lt;br&gt;• Anmeldung nötig (Supabase Auth)?&lt;br&gt;• Eine oder mehrere Antworten / Fragen?&lt;br&gt;• Abstimmen per Klick (Checkliste) oder per „Complete survey“ (Design)?&lt;br&gt;• Wie endet eine Umfrage ohne Deadline?" vertex="1">
+                    <mxGeometry height="140" width="340" x="1200" y="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="noteLegend" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;size=15;" value="&lt;b&gt;Legende:&lt;/b&gt;&lt;br&gt;Blau = Schritt&lt;br&gt;Gelb = Entscheidung&lt;br&gt;Rot = Fehlerfall&lt;br&gt;Grün = Start / Erfolg&lt;br&gt;Lila = nur lesen&lt;br&gt;Gestrichelt = Ereignis von außen&lt;br&gt;&lt;br&gt;&lt;b&gt;Hintergrund:&lt;/b&gt;&lt;br&gt;Orange = Seite 1 (Route)&lt;br&gt;Türkis = Seite 2 (Route)&lt;br&gt;Violett gestrichelt = Modal / Overlay&lt;br&gt;Rahmen „Zustand“ = gleiche Seite, andere Darstellung" vertex="1">
+                    <mxGeometry height="240" width="260" x="1200" y="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="load">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2" edge="1" parent="1" source="load" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="dLoad">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e3" edge="1" parent="1" source="dLoad" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="errLoad" value="nein">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4" edge="1" parent="1" source="dLoad" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="home" value="ja">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e5" edge="1" parent="1" source="home" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="dAction">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e6" edge="1" parent="1" source="dAction" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0;exitY=0.5;" target="filterClick" value="filtern">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e7" edge="1" parent="1" source="dAction" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="surveyClick" value="Umfrage öffnen">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e8" edge="1" parent="1" source="dAction" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=1;exitY=0.5;" target="newClick" value="neue Umfrage">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e9" edge="1" parent="1" source="filterClick" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="filterList">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e10" edge="1" parent="1" source="filterList" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" target="home" value="Liste neu anzeigen">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="5" y="590"/>
+                            <mxPoint x="5" y="375"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e11" edge="1" parent="1" source="surveyClick" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="detail">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e12" edge="1" parent="1" source="detail" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="results">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e13" edge="1" parent="1" source="results" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="dExpired">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e14" edge="1" parent="1" source="dExpired" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="readOnly" value="ja">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e15" edge="1" parent="1" source="dExpired" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="vote" value="nein">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e16" edge="1" parent="1" source="vote" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="saveVote">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e17" edge="1" parent="1" source="saveVote" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="dVoteOk">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e18" edge="1" parent="1" source="dVoteOk" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="errVote" value="nein">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e19" edge="1" parent="1" source="dVoteOk" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="updateResults" value="ja">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e20" edge="1" parent="1" source="otherVote" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;dashed=1;" target="updateResults">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e21" edge="1" parent="1" source="newClick" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="modal">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e22" edge="1" parent="1" source="modal" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="fillForm">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e23" edge="1" parent="1" source="fillForm" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="dCancel">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e24" edge="1" parent="1" source="dCancel" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="closeModal" value="ja">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e25" edge="1" parent="1" source="closeModal" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=0;entryX=1;entryY=0.5;" target="home" value="zurück">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="990" y="375"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e26" edge="1" parent="1" source="dCancel" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="dValid" value="nein (Publish)">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e27" edge="1" parent="1" source="dValid" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="errValid" value="nein">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e28" edge="1" parent="1" source="errValid" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="fillForm" value="korrigieren">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1120" y="1110"/>
+                            <mxPoint x="1120" y="840"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e29" edge="1" parent="1" source="dValid" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="saveSurvey" value="ja">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e30" edge="1" parent="1" source="saveSurvey" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="dSaveOk">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e31" edge="1" parent="1" source="dSaveOk" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="errSave" value="nein">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e32" edge="1" parent="1" source="errSave" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="fillForm" value="erneut versuchen">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1150" y="1360"/>
+                            <mxPoint x="1150" y="840"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e33" edge="1" parent="1" source="dSaveOk" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="confirm" value="ja">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e34" edge="1" parent="1" source="confirm" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" target="toNewDetail">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e35" edge="1" parent="1" source="toNewDetail" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" target="detail" value="öffnet">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="540" y="1590"/>
+                            <mxPoint x="540" y="740"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

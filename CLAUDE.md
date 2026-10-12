@@ -453,3 +453,155 @@ und
 wählen kannst, wähle immer den kleinen verständlichen Lernschritt.
 
 Nach jedem abgeschlossenen Lernschritt stoppen und auf meine nächste Anweisung warten.
+
+## HTML- und Typescript- Konventionen 
+# HTML- und TypeScript-Konventionen – PollAPP
+
+## 1. Allgemeine Regeln
+
+- Schreibe einfachen, verständlichen und wartbaren Code.
+- Verwende Angular mit TypeScript im Strict Mode.
+- Bevorzuge moderne Angular-Funktionen und Standalone Components.
+- Verwende aussagekräftige englische Namen für Variablen, Funktionen, Klassen und Dateien.
+- Schreibe Kommentare und Erklärungen auf Deutsch.
+- Vermeide unnötige Abstraktionen und komplexe Lösungen.
+- Implementiere nur die aktuell angeforderte Funktionalität.
+- Erkläre neue TypeScript- und Angular-Konzepte verständlich.
+- Vermeide doppelte Implementierungen (DRY-Prinzip), ohne unnötig zu abstrahieren.
+
+## 2. HTML-Konventionen
+
+### Struktur
+
+- Verwende semantisches HTML5.
+- Verwende passende Elemente wie `header`, `main`, `section`, `article`, `nav` und `footer`.
+- Verwende `div` nur, wenn kein semantisch passendes Element existiert.
+- Achte auf eine logische Überschriftenhierarchie.
+- Verwende zwei Leerzeichen für Einrückungen.
+- Schreibe HTML-Attribute in Kleinbuchstaben, soweit es sich nicht um Angular-spezifische Bindungen handelt.
+- Verwende doppelte Anführungszeichen für Attribute.
+
+### Formulare
+
+- Jedes Eingabefeld erhält ein zugeordnetes `label`.
+- Verwende passende Input-Typen wie `email`, `password` oder `number`.
+- Verwende für Aktionen `button` statt klickbarer `div`-Elemente.
+- Definiere bei Buttons innerhalb von Formularen immer den passenden `type`.
+- Zeige verständliche Validierungsfehler an.
+- Verwende bei komplexeren Formularen Angular Reactive Forms.
+
+### Angular-Templates
+
+- Verwende die moderne Angular-Control-Flow-Syntax `@if`, `@for` und `@switch`.
+- Verwende bei `@for` immer einen geeigneten `track`-Ausdruck.
+- Verwende Property Binding `[property]` und Event Binding `(event)`.
+- Vermeide komplexe Berechnungen direkt im Template.
+- Verwende keine direkten DOM-Manipulationen, wenn Angular eine passende Lösung bietet.
+- Verwende Angular-Signals für lokalen reaktiven Zustand, wenn sinnvoll.
+- Trenne HTML-Struktur, TypeScript-Logik und SCSS-Styling.
+- Verwende keine Inline-Styles, außer wenn sie technisch begründet sind.
+
+### Barrierefreiheit
+
+- Verwende aussagekräftige Button-Beschriftungen.
+- Achte auf Tastaturbedienbarkeit.
+- Verwende `alt`-Attribute bei Bildern.
+- Verwende ARIA-Attribute nur dort, wo semantisches HTML nicht ausreicht.
+
+## 3. TypeScript-Konventionen
+
+### Schreibweise
+
+- Variablen und Funktionen: `camelCase`
+- Klassen, Interfaces und Types: `PascalCase`
+- Konstanten auf Modulebene: `UPPER_SNAKE_CASE`, wenn es sich um echte unveränderliche Konfigurationswerte handelt
+- Dateinamen: `kebab-case`
+- Private Eigenschaften: aussagekräftige Namen ohne führenden Unterstrich
+
+### Variablen
+
+- Verwende grundsätzlich `const`.
+- Verwende `let` nur bei notwendiger Neuzuweisung.
+- Verwende niemals `var`.
+- Verwende explizite Typen, wenn sie das Verständnis verbessern.
+- Nutze Type Inference bei offensichtlich erkennbaren Typen.
+- Vermeide `any`; verwende bei unbekannten Daten `unknown` mit Typprüfung.
+
+### Funktionen
+
+- Bevorzuge kleine Funktionen mit einer klaren Aufgabe.
+- Verwende aussagekräftige Funktionsnamen.
+- Verwende Arrow Functions dort, wo sie sinnvoll sind.
+- Verwende normale Methoden für Angular-Komponenten, wenn dies die Lesbarkeit verbessert.
+- Verwende `async/await` für asynchrone Promise-basierte Abläufe.
+- Behandle Fehler mit `try/catch`, wenn dies zum verwendeten API-Modell passt.
+- Vermeide verschachtelte Bedingungen, wenn Guard Clauses die Lesbarkeit verbessern.
+
+### Interfaces und Types
+
+- Definiere Interfaces für strukturierte Datenmodelle.
+- Verwende `type` für Union Types und zusammengesetzte Typen.
+- Verwende optionale Eigenschaften nur, wenn diese tatsächlich optional sind.
+- Verwende keine unnötigen Typumwandlungen mit `as`.
+- Bevorzuge typsichere Rückgabewerte.
+
+## 4. Angular-Konventionen
+
+- Verwende Standalone Components.
+- Verwende `inject()` für Dependency Injection.
+- Verwende Signals für einfachen lokalen Komponentenstatus.
+- Verwende `computed()` für abgeleitete Zustände.
+- Verwende `effect()` nur für tatsächliche Seiteneffekte.
+- Verwende Services für Datenzugriff und gemeinsam genutzte Geschäftslogik.
+- Halte Komponenten möglichst schlank.
+- Verwende `ChangeDetectionStrategy.OnPush`, sofern sinnvoll.
+- Verwende Angular Router für die Navigation.
+- Verwende SCSS für das Styling.
+- Verwende keine zusätzlichen Bibliotheken ohne vorherige Rücksprache.
+
+## 5. Supabase-Konventionen
+
+- Kapsle Supabase-Zugriffe in Angular-Services.
+- Verwende TypeScript-Typen für Datenbankeinträge.
+- Prüfe Rückgabefehler von Supabase-Abfragen.
+- Verwende `async/await` für Supabase-Abfragen.
+- Speichere niemals Service-Role-Keys oder andere geheime Zugangsdaten im Frontend.
+- Verwende Row Level Security (RLS) zur Absicherung von Daten.
+- Verlasse dich bei Berechtigungen niemals ausschließlich auf Frontend-Prüfungen.
+- Trenne Datenbanklogik und Benutzeroberfläche.
+
+## 6. SCSS-Konventionen
+
+- Verwende SCSS statt Inline-CSS.
+- Verwende `kebab-case` für CSS-Klassen.
+- Verwende aussagekräftige Klassennamen.
+- Verwende SCSS-Nesting nur bei sinnvoller Verschachtelung.
+- Vermeide unnötig hohe CSS-Spezifität.
+- Verwende CSS-Variablen für wiederkehrende Designwerte.
+- Orientiere dich am bereitgestellten Figma-Design.
+- Achte auf responsive Darstellung für Desktop, Tablet und Smartphone.
+
+## 7. Kommentare und Dokumentation
+
+- Schreibe Kommentare auf Deutsch.
+- Kommentiere insbesondere komplexe Abläufe und wichtige Entscheidungen.
+- Vermeide Kommentare, die nur den offensichtlichen Code wiederholen.
+- Erkläre neue Angular- und TypeScript-Konzepte beim erstmaligen Einsatz.
+- Verwende bei Bedarf kurze JSDoc-Kommentare für komplexere Funktionen.
+
+## 8. Regeln für Claude Code im Lernprojekt
+
+Diese Regeln haben besonders hohe Priorität:
+
+1. Implementiere immer nur einen kleinen, nachvollziehbaren Entwicklungsschritt.
+2. Erkläre vor größeren Änderungen kurz, was du vorhast.
+3. Verwende möglichst einfache Lösungen.
+4. Erkläre neue TypeScript- und Angular-Syntax.
+5. Erzeuge nicht mehrere neue Komponenten oder Services auf einmal, sofern ich das nicht ausdrücklich verlange.
+6. Zeige mir nach jedem Schritt, welche Dateien geändert wurden.
+7. Erkläre die wichtigsten Änderungen und deren Zusammenhänge.
+8. Prüfe nach Änderungen, soweit möglich, ob der Code kompiliert.
+9. Frage vor größeren Architekturentscheidungen nach.
+10. Warte nach jedem abgeschlossenen Lernschritt auf meine Freigabe, bevor du weitermachst.
+
+**Wichtig:** Verständlichkeit und Lerneffekt haben Vorrang vor möglichst kurzer Implementierungszeit.

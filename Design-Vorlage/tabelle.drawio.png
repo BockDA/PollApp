@@ -1,0 +1,25 @@
+<mxfile host="65bd71144e">
+    <diagram id="LwnrVsnbGBGGiXaMPVsr" name="Page-1">
+        <mxGraphModel dx="1220" dy="774" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="algg6S-ilMGFlDxv5zMB-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+                    <mxGeometry height="110" width="230" x="130" y="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="algg6S-ilMGFlDxv5zMB-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+                    <mxGeometry height="120" width="220" x="130" y="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="algg6S-ilMGFlDxv5zMB-4" parent="1" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.phone2;strokeColor=#c0c0c0;" value="" vertex="1">
+                    <mxGeometry height="390" width="200" x="590" y="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="algg6S-ilMGFlDxv5zMB-6" parent="1" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.keyboard;sketch=0;strokeColor=none;" value="" vertex="1">
+                    <mxGeometry height="100" width="185" x="597.5" y="290" as="geometry"/>
+                </mxCell>
+                <mxCell id="algg6S-ilMGFlDxv5zMB-7" parent="1" style="image;html=1;image=img/lib/clip_art/computers/Netbook_128x128.png" value="" vertex="1">
+                    <mxGeometry height="80" width="80" x="425" y="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

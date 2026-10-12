@@ -1,0 +1,20 @@
+<section>
+  <!-- Reiter: Das Umschalten folgt, sobald es Umfragedaten gibt. aria-pressed ist bis dahin fest gesetzt. -->
+  <div class="survey-tabs">
+    <button type="button" aria-pressed="true">Active survey</button>
+    <button type="button" aria-pressed="false">Past survey</button>
+  </div>
+
+  <!-- Kategorienfilter: Die Auswahl wirkt sich aus, sobald es Umfragedaten gibt. -->
+  <div class="category-filter">
+    <label for="category-filter">Sort by categories</label>
+    <select id="category-filter">
+      <option value="all">All Surveys</option>
+      @for (category of categories; track category) {
+        <option [value]="category">{{ category }}</option>
+      }
+    </select>
+  </div>
+
+  <!-- Vorläufig: Hier folgen die Umfragen. -->
+</section>
