@@ -1,3 +1,17 @@
 <section>
   <h3>Ending soon surveys</h3>
+
+  <div class="ending-soon-cards">
+    @for (survey of endingSoonSurveys(); track survey.id) {
+      <article class="ending-soon-card">
+        <p class="ending-soon-card-category">{{ survey.category }}</p>
+        <h4 class="ending-soon-card-title">{{ survey.title }}</h4>
+        <p class="ending-soon-card-deadline">{{ endsInLabel(survey.endDate) }}</p>
+      </article>
+    } @empty {
+      <article class="ending-soon-card">
+        <p>No surveys ending soon</p>
+      </article>
+    }
+  </div>
 </section>

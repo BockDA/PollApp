@@ -1,5 +1,19 @@
 # PollApp
 
+## Vereinbarte Entscheidungen
+
+### Bald endende Umfragen („Ending soon surveys“)
+- Angezeigt werden die **3 laufenden Umfragen mit dem frühesten Enddatum**, unabhängig davon, wie weit das Ende entfernt ist (kein festes Zeitfenster).
+- Nur Umfragen mit Deadline; sortiert nach Enddatum, frühestes Ende zuerst. Umfragen ohne Deadline (optionales Feld) erscheinen hier nicht.
+- Gibt es weniger als 3 passende Umfragen, werden nur die vorhandenen Karten gezeigt.
+- Gibt es keine passende Umfrage, erscheint stattdessen eine einzelne Hinweiskarte („No surveys ending soon“).
+- Die Anzahl 3 stammt aus dem Figma-Design, nicht aus der Checkliste.
+- Mobil: Die Karten liegen nebeneinander und lassen sich seitlich wischen (horizontales Scrollen).
+
+### Anzeige der Deadline („Ends in X Day(s)“)
+- Verbleibende Zeit wird auf ganze Tage **aufgerundet**: Angefangene 24 Stunden zählen als 1 Tag, „0 Days“ erscheint nie.
+- Ohne Deadline wird „No deadline“ angezeigt (eigener Text, nicht aus Figma).
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.26.
 
 ## Development server

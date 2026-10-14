@@ -6,7 +6,8 @@
     "start": "node node_modules/@angular/cli/bin/ng.js serve --host 0.0.0.0",
     "build": "node node_modules/@angular/cli/bin/ng.js build",
     "watch": "node node_modules/@angular/cli/bin/ng.js build --watch --configuration development",
-    "test": "node node_modules/@angular/cli/bin/ng.js test"
+    "test": "node node_modules/@angular/cli/bin/ng.js test",
+    "lint": "node node_modules/@angular/cli/bin/ng.js lint"
   },
   "private": true,
   "packageManager": "npm@9.2.0",
@@ -24,9 +25,13 @@
     "@angular/build": "^21.2.26",
     "@angular/cli": "^21.2.26",
     "@angular/compiler-cli": "^21.2.0",
+    "@eslint/js": "^10.0.1",
+    "angular-eslint": "21.4.0",
+    "eslint": "^10.3.0",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2",
+    "typescript-eslint": "8.59.2",
     "vitest": "^4.0.8"
   }
 }

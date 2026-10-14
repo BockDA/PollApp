@@ -172,6 +172,10 @@ Das wichtigste Ziel ist, dass ich den entstehenden Code verstehe und nachvollzie
 
 # Arbeitsweise
 
+Beginne jede Antwort an mich mit einem farbigen Quadrat als Markierung, abwechselnd 🟨 (gelb) und 🟧 (orange). Schau dabei auf deine vorherige Antwort: Hat sie mit 🟨 begonnen, beginnt die nächste mit 🟧 und umgekehrt. So sehe ich beim Scrollen schnell, wo eine neue Antwort anfängt.
+
+Wenn du mich fragst, ob du mit dem nächsten Schritt weitermachen oder einen Vorschlag umsetzen sollst, stelle die Frage mit Auswahl-Buttons (z. B. „Weiter“). Rückfragen schreibe ich dann selbst in das freie Textfeld.
+
 Arbeite immer in kleinen, überschaubaren Schritten.
 
 Implementiere niemals mehrere größere Funktionen gleichzeitig.
