@@ -1,0 +1,17 @@
+// Logo-Leiste und Seiteninhalt teilen sich dieselbe Breite wie in Figma,
+// damit das Logo bündig über dem Inhalt steht.
+// VORLÄUFIG: zentriert, bis die Seitenränder aus Figma feststehen.
+header,
+main {
+  
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+}
+
+
+header {
+ h1{
+  
+  margin-top: 49px;
+}
+}

@@ -1,0 +1,19 @@
+Schriften:
+
+Nerko One
+Nokora
+Mulish
+
+
+Farben:
+
+#FFB770   ->Schriftfarbe Überschriften
+#35273A   ->Hintergrund
+#E6E4E6   ->Schriftfarbe Fließtext
+#FEE9D4   ->Button nicht aktiv
+#FFCFA1   ->Button aktiv
+
+#FFCFA1   ->Button New survey
+#FFB770   ->Button New survey gedrückt
+
+

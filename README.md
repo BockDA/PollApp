@@ -14,6 +14,9 @@
 - Verbleibende Zeit wird auf ganze Tage **aufgerundet**: Angefangene 24 Stunden zählen als 1 Tag, „0 Days“ erscheint nie.
 - Ohne Deadline wird „No deadline“ angezeigt (eigener Text, nicht aus Figma).
 
+## Extras (nicht Teil der Checkliste)
+- Startseite: Die Illustration im Einleitungsbereich wechselt beim Überfahren mit der Maus (Hover) von `visual-3.png` zu `visual-4.png`. Umsetzung nur mit CSS (`:hover` + `opacity`).
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.26.
 
 ## Development server

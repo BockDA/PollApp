@@ -1,0 +1,22 @@
+// VORLÄUFIG: neutrale Abstände und Maße, bis die Figma-Werte vorliegen (Schritt 5b/5c).
+
+.ending-soon-cards {
+  display: flex;
+  gap: 16px;
+
+  // Passen die Karten nicht nebeneinander (z. B. auf dem Handy),
+  // lässt sich die Reihe seitlich wischen statt umzubrechen.
+  overflow-x: auto;
+
+  // Beim Wischen rastet jeweils eine Karte am linken Rand ein.
+  scroll-snap-type: x mandatory;
+}
+
+.ending-soon-card {
+  // Feste Kartenbreite: nicht wachsen, nicht schrumpfen.
+  flex: 0 0 240px;
+  scroll-snap-align: start;
+
+  padding: 16px;
+  border: 1px solid currentColor;
+}

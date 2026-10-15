@@ -1,1 +1,54 @@
+// Einleitungsbereich: Text links, Illustration rechts (Figma, Desktop).
+// Die Breite (1218px) kommt vom <main> in app.scss.
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // VORLÄUFIG: Auf schmalen Bildschirmen rutscht die Illustration unter den Text,
+  // bis die Mobilvorlage vorliegt.
+  flex-wrap: wrap;
+}
 
+// Große Überschrift im Einleitungsbereich (Werte aus Figma, Desktop).
+// Die Werte für Mobilgeräte sind noch offen.
+.intro-title {
+  font-size: 100px;
+  line-height: 89px;
+  font-weight: 400;
+}
+
+// Einleitungstext unter der Überschrift (Werte aus Figma, Desktop).
+// Die Schrift Mulish kommt bereits über den body aus styles.scss.
+.intro-text {
+  // Breite des Textblocks in Figma (712px); dadurch bricht der Text wie dort dreizeilig um.
+  max-width: 712px;
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: 600;
+}
+
+// Beide Bilder liegen per Grid in derselben Zelle genau übereinander.
+.intro-visual {
+  display: grid;
+}
+
+.intro-visual img {
+  grid-area: 1 / 1;
+}
+
+// Das zweite Bild ist zunächst unsichtbar.
+.intro-visual-hover {
+  opacity: 0;
+}
+
+// Beim Hover tauschen die Bilder. Visual 3 muss dabei verschwinden, weil die PNGs
+// transparente Bereiche haben – sonst schiene z. B. die Sprechblase durch Visual 4 durch.
+.intro-visual:hover {
+  .intro-visual-default {
+    opacity: 0;
+  }
+
+  .intro-visual-hover {
+    opacity: 1;
+  }
+}
