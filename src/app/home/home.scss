@@ -45,10 +45,73 @@
 // transparente Bereiche haben – sonst schiene z. B. die Sprechblase durch Visual 4 durch.
 .intro-visual:hover {
   .intro-visual-default {
+    transition: opacity 0.5s ease-in-out;
     opacity: 0;
   }
 
   .intro-visual-hover {
     opacity: 1;
+  }
+}
+
+.button-new {
+  --initial-width: 138px;
+  --hover-width: 180px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-button);
+  color: var(--color-violet-dark);
+  border: none;
+  border-radius: 10px;
+
+  width: var(--initial-width);
+  height: 48px;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+
+  transition:
+    width 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  // Text bleibt mittig im ursprünglichen Button
+  .button-text {
+    position: absolute;
+    left: 0;
+    width: var(--initial-width);
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  // Plus-Icon zunächst unsichtbar
+  .button-icon {
+    position: absolute;
+    right: 10px;
+
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  // Hover-Effekt
+  &:hover {
+    width: var(--hover-width);
+    background-color: var(--color-button-hover);
+
+    .button-icon {
+      opacity: 1;
+    }
   }
 }
