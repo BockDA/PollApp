@@ -96,11 +96,9 @@
   .button-icon {
     position: absolute;
     right: 10px;
-
     width: 24px;
     height: 24px;
     object-fit: contain;
-
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }
