@@ -1,0 +1,190 @@
+// Filterleiste (Figma „Filters“): waagerecht, Höhe 25px,
+// Reiter und Kategorienfilter an den äußeren Rändern (space-between).
+.survey-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 25px;
+  // Abgeleitet aus Figma: Die Liste beginnt bei Top 65px, die Leiste ist 25px hoch → 40px Abstand.
+  margin-bottom: 40px;
+}
+
+// Reiter-Buttons (Figma „Filter button“). Textwerte aus Figma;
+// VORLÄUFIG: Innenabstand und Rundung fehlen noch (Werte der Button-Komponente).
+.survey-tabs button {
+  border: none;
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--color-violet-dark);
+  background-color: var(--color-button-inactive);
+  cursor: pointer;
+}
+
+// Der gewählte Reiter: Angular setzt aria-pressed="true" (siehe survey-list.html).
+.survey-tabs button[aria-pressed='true'] {
+  background-color: var(--color-button);
+}
+
+// Kategorien-Dropdown (Figma „Drop down & menu“): eigener Button + Menü statt nativem <select>,
+// damit auch der geöffnete Zustand dem Design entspricht (Entscheidung Variante B).
+.category-filter {
+  // Bezugspunkt, damit das Menü später direkt unter dem Button positioniert werden kann.
+  position: relative;
+}
+
+// Das Menü schwebt unter dem Button über der Seite, statt Platz einzunehmen.
+// Sonst würde der Rahmen beim Öffnen höher und Button und Filterleiste würden sich verschieben.
+.category-filter-menu {
+  position: absolute;
+  // 100 % = direkt unter der Unterkante von .category-filter (dem Button).
+  top: 100%;
+  left: 0;
+  // Liegt über der Umfragenliste, die im HTML später folgt.
+  z-index: 1;
+  margin: 0;
+
+  // VORLÄUFIG: Werte aus dem Figma-Screenshot geschätzt (keine exakten Figma-Angaben).
+  width: 206px;
+  box-sizing: border-box;
+  margin-top: 4px;
+  padding: 6px 0;
+  // Keine Aufzählungspunkte: Die <ul> ist hier ein Menü, keine Fließtext-Liste.
+  list-style: none;
+  background-color: var(--color-white);
+  border-radius: 6px;
+}
+
+// Einträge im Menü. VORLÄUFIG: Schriftgröße und Abstände aus dem Screenshot geschätzt.
+.category-filter-menu button {
+  // Ganze Breite anklickbar, Text linksbündig wie in Figma.
+  width: 100%;
+  padding: 6px 10px;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--color-violet-dark);
+  cursor: pointer;
+
+  // EIGENE ERGÄNZUNG (nicht in Figma): Rückmeldung beim Überfahren und bei Tastaturfokus.
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-button-inactive);
+  }
+}
+
+// Gewählte Kategorie unter dem Button (Figma-Screenshot).
+// Schwebt wie das Menü, damit sich die Filterleiste nicht verschiebt; ein offenes Menü liegt darüber.
+// VORLÄUFIG: Schriftgröße und Einzug aus dem Screenshot geschätzt.
+.category-filter-selected {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 4px 0 0;
+  padding-left: 10px;
+  font-size: 14px;
+  color: var(--color-orange);
+  white-space: nowrap;
+}
+
+// Button „Sort by categories“ (Figma „drop down“, Zustand closed).
+// Text: Mulish 700, 18px, 100 %, #FFFFFF. Ein <button> übernimmt die Schrift nicht automatisch,
+// daher font-family: inherit (Mulish vom body).
+.category-filter-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 206px;
+  box-sizing: border-box;
+  padding: 4px 6px 4px 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 100%;
+  color: var(--color-white);
+  cursor: pointer;
+
+  // VORLÄUFIG: weißes Dreieck aus CSS-Rahmen, bis der Pfeil aus Figma exportiert ist.
+  // Ein Element ohne Größe mit drei Rahmen ergibt ein nach unten zeigendes Dreieck.
+  &::after {
+    content: '';
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 8px solid var(--color-white);
+  }
+
+  // Hover und geöffnet (Figma-Screenshots): hellere Fläche, Pfeil orange.
+  // aria-expanded setzt Angular automatisch (siehe survey-list.html).
+  &:hover,
+  &[aria-expanded='true'] {
+    background-color: var(--color-overlay-light);
+
+    &::after {
+      border-top-color: var(--color-orange);
+    }
+  }
+
+  // Nur geöffnet: Pfeil zeigt nach oben.
+  &[aria-expanded='true']::after {
+    transform: rotate(180deg);
+  }
+}
+
+// Liste der Umfragen (Figma „List of surveys“, Desktop): zwei Spalten, Gap 16px.
+.survey-list {
+  display: grid;
+  // Zwei gleich breite Spalten; 1fr = ein Anteil des verfügbaren Platzes.
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  // Feste Höhe aus Figma (422px ≈ drei Zeilen); weitere Einträge scrollen innerhalb der Liste.
+  max-height: 422px;
+  overflow-y: auto;
+  // Oranger Scrollbalken wie in Figma (Daumen orange, Spur transparent).
+  scrollbar-color: var(--color-orange) transparent;
+}
+
+// Eintrag in der Liste (Figma „Survey view in the list“).
+// Die Breite (513px in Figma) ergibt sich aus der Grid-Spalte, die Höhe aus dem Inhalt.
+.survey-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 12px 20px;
+  background-color: var(--color-overlay-light);
+  // Reihenfolge: oben links, oben rechts, unten rechts, unten links.
+  border-radius: 5px 50px 5px 5px;
+}
+
+// Browser-Standardabstände entfernen, damit nur die Figma-Abstände wirken.
+.survey-card-category,
+.survey-card-title,
+.survey-card-deadline {
+  margin: 0;
+}
+
+// Etikett „Ends in …“ steht rechts unten.
+// Werte wie beim Ending-soon-Etikett (Figma); im Screenshot sehen beide gleich aus.
+.survey-card-deadline {
+  align-self: flex-end;
+  padding: 3px 6px;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: var(--color-button);
+  color: var(--color-violet-dark);
+  border-top-right-radius: 14px;
+}
+
+// VORLÄUFIG: Grenze für „Handy“ (768px) ist geschätzt, die Mobilvorlage liegt noch nicht vor.
+// Auf schmalen Bildschirmen stehen die Einträge untereinander (CLAUDE.md).
+@media (max-width: 768px) {
+  .survey-list {
+    grid-template-columns: 1fr;
+  }
+}

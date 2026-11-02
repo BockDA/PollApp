@@ -14,6 +14,11 @@
 - Verbleibende Zeit wird auf ganze Tage **aufgerundet**: Angefangene 24 Stunden zählen als 1 Tag, „0 Days“ erscheint nie.
 - Ohne Deadline wird „No deadline“ angezeigt (eigener Text, nicht aus Figma).
 
+### Liste und Kategorienfilter
+- Kategorien: die 6 Werte aus `SurveyCategory` (`src/app/models/survey.ts`). Das Figma-Menü zeigt teils andere Namen (z. B. „Workplace culture“); wir bleiben bei unseren 6.
+- Das Kategorien-Dropdown ist ein eigenes Dropdown (Button + Menü) statt eines nativen `<select>`. Grund: Auch der geöffnete Zustand soll dem Figma-Design entsprechen; ein `<select>` lässt sich geöffnet nicht gestalten. Tastaturbedienung (z. B. Esc) setzen wir deshalb selbst um.
+- Die Liste hat eine feste Höhe (422px, Figma) und scrollt innen.
+
 ## Extras (nicht Teil der Checkliste)
 - Startseite: Die Illustration im Einleitungsbereich wechselt beim Überfahren mit der Maus (Hover) von `visual-3.png` zu `visual-4.png`. Umsetzung nur mit CSS (`:hover` + `opacity`).
 

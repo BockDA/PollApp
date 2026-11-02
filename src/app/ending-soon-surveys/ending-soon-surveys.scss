@@ -1,20 +1,69 @@
-// VORLÄUFIG: neutrale Abstände und Maße, bis die Figma-Werte vorliegen (Schritt 5b/5c).
+// VORLÄUFIG: Maße, Abstände und Schriftgrößen sind aus einem Figma-Screenshot geschätzt,
+// keine exakten Figma-Werte. Farben kommen aus den Variablen in styles.scss.
+
+// Überschrift „Ending soon surveys“ (Werte aus Figma, Desktop).
+// Mulish kommt bereits über den body aus styles.scss.
+.ending-soon-title {
+  font-size: 32px;
+  line-height: 100%;
+  font-weight: 500;
+  color: var(--color-white);
+}
 
 .ending-soon-cards {
   display: flex;
-  gap: 16px;
+  gap: 32px;
 
   // Passen die Karten nicht nebeneinander (z. B. auf dem Handy),
   // lässt sich die Reihe seitlich wischen statt umzubrechen.
   overflow-x: auto;
   // Beim Wischen rastet jeweils eine Karte am linken Rand ein.
   scroll-snap-type: x mandatory;
+  // Platz für den Schatten, sonst schneidet overflow-x ihn unten ab.
+  padding-bottom: 8px;
 }
 
 .ending-soon-card {
   // Feste Kartenbreite: nicht wachsen, nicht schrumpfen.
-  flex: 0 0 240px;
+  flex: 0 0 320px;
+  min-height: 310px;
+  box-sizing: border-box;
   scroll-snap-align: start;
-  padding: 16px;
-  border: 1px solid currentColor;
+  padding: 44px;
+
+  // Flex-Spalte, damit das Deadline-Etikett unten in der Karte stehen kann.
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-lavender-light);
+  color: var(--color-violet-dark);
+  // Nur die Ecke oben rechts ist stark abgerundet (Figma).
+  border-radius: 0 80px 0 0;
+  box-shadow: 0 4px 4px var(--color-shadow);
+}
+
+.ending-soon-card-category {
+  margin: 0;
+  font-size: 14px;
+}
+
+.ending-soon-card-title {
+  margin: 12px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.ending-soon-card-deadline {
+  // margin-top: auto schiebt das Etikett ans untere Ende der Flex-Spalte.
+  margin: auto 0 0;
+  // Das Etikett soll nur so breit sein wie sein Text, nicht die ganze Karte.
+  align-self: flex-start;
+  // Figma: Höhe 24px = 3px Padding oben + 18px Zeilenhöhe + 3px Padding unten.
+  // Die Breite (109px in Figma) ist nicht fest, weil sie vom Text abhängt.
+  padding: 3px 6px;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: var(--color-button);
+  border-top-right-radius: 14px;
 }

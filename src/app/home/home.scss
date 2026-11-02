@@ -27,6 +27,15 @@
   font-weight: 600;
 }
 
+// Überschrift „Your surveys“ (Werte aus Figma, Desktop).
+// Schrift Nerko One und Farbe #FFB770 kommen bereits über h2 aus styles.scss.
+.surveys-title {
+  font-size: 72px;
+  line-height: 100%;
+  font-weight: 400;
+  text-align: center;
+}
+
 // Beide Bilder liegen per Grid in derselben Zelle genau übereinander.
 .intro-visual {
   display: grid;
