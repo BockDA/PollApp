@@ -1,5 +1,13 @@
 // Filterleiste (Figma „Filters“): waagerecht, Höhe 25px,
 // Reiter und Kategorienfilter an den äußeren Rändern (space-between).
+
+section{
+ //background-color: red;
+  margin-bottom: 132px;
+
+  padding-bottom: 32px;
+}
+
 .survey-filters {
   display: flex;
   justify-content: space-between;
@@ -146,8 +154,34 @@
   // Feste Höhe aus Figma (422px ≈ drei Zeilen); weitere Einträge scrollen innerhalb der Liste.
   max-height: 422px;
   overflow-y: auto;
-  // Oranger Scrollbalken wie in Figma (Daumen orange, Spur transparent).
-  scrollbar-color: var(--color-orange) transparent;
+  padding-bottom: 32px;
+
+  // Oranger Scrollbalken ohne Pfeile (Figma). Chrome, Edge und Safari gestalten ihn über die
+  // ::-webkit-scrollbar-Elemente. Achtung: Chrome ignoriert diese, sobald scrollbar-color gesetzt ist,
+  // deshalb steht scrollbar-color nur im @supports-Block für Browser ohne ::-webkit-scrollbar (Firefox).
+  // VORLÄUFIG: Breite und Rundung aus dem Screenshot geschätzt.
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-orange);
+    border-radius: 4px;
+  }
+
+  // Die Pfeil-Buttons oben und unten ausblenden.
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  // Firefox zeigt keine Pfeile; dort reicht die Farbe.
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-color: var(--color-orange) transparent;
+  }
 }
 
 // Eintrag in der Liste (Figma „Survey view in the list“).
@@ -160,6 +194,13 @@
   background-color: var(--color-overlay-light);
   // Reihenfolge: oben links, oben rechts, unten rechts, unten links.
   border-radius: 5px 50px 5px 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  // Beim Überfahren etwas heller (Figma-Screenshot).
+  &:hover {
+    background-color: var(--color-overlay-hover);
+  }
 }
 
 // Browser-Standardabstände entfernen, damit nur die Figma-Abstände wirken.

@@ -3,6 +3,12 @@
 
 // Überschrift „Ending soon surveys“ (Werte aus Figma, Desktop).
 // Mulish kommt bereits über den body aus styles.scss.
+
+section{
+  background-color: yellow;
+  margin-bottom: 32px;
+}
+
 .ending-soon-title {
   font-size: 32px;
   line-height: 100%;
@@ -40,6 +46,13 @@
   // Nur die Ecke oben rechts ist stark abgerundet (Figma).
   border-radius: 0 80px 0 0;
   box-shadow: 0 4px 4px var(--color-shadow);
+  cursor: pointer;
+
+  // Beim Überfahren der Karte wird das Etikett kräftiger orange (Figma-Screenshot).
+  // Der Selektor steht an der Karte, weil die ganze Karte die Maus „bemerkt“, nicht nur das Etikett.
+  &:hover .ending-soon-card-deadline {
+    background-color: var(--color-orange);
+  }
 }
 
 .ending-soon-card-category {
@@ -66,4 +79,5 @@
   line-height: 18px;
   background-color: var(--color-button);
   border-top-right-radius: 14px;
+  transition: background-color 0.2s ease-in-out;
 }
